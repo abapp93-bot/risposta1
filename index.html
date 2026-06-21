@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Importante</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      font-family: Arial, sans-serif;
+      background: #111827;
+      color: #ffffff;
+    }
+
+    .popup {
+      width: 100%;
+      max-width: 700px;
+      padding: 34px;
+      border-radius: 18px;
+      text-align: center;
+      background: #ffffff;
+      color: #111827;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 2.2rem;
+    }
+
+    .testo {
+      margin: 22px 0;
+      line-height: 1.7;
+      font-size: 1.05rem;
+      white-space: pre-line;
+    }
+
+    .bottoni {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 28px 0;
+    }
+
+    button,
+    .bottone-link {
+      border: 0;
+      border-radius: 10px;
+      padding: 13px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .bottone-link {
+      background: #111827;
+      color: white;
+    }
+
+    button {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    .countdown-box {
+      border-top: 1px solid #d1d5db;
+      padding-top: 22px;
+    }
+
+    .countdown-label {
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
+    #countdown {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body id="inizio">
+
+  <main class="popup">
+    <h1>IMPORTANTE</h1>
+
+    <div class="testo">
+    Ciao a tutti. È da un sacco di tempo che ci penso e alla fine ho deciso, perché è giusto così. È la cosa più difficile che abbia mai dovuto fare, ma è una scelta che devo fare non per me, ma per voi. Non merito la vostra amicizia, non merito che perdiate nemmeno un secondo a pensare a me. Lo so, l’ho sempre saputo, ma sono stato un egoista e ho continuato a restare nelle vostre vite. Oggi però ho detto basta. Andrea, fermati, fallo per loro.
+È finita qui. Sono contento di aver passato del tempo con voi, di aver condiviso momenti che per me sono tutto. Vi svelo una cosa: quella parete in cucina, con le nostre foto, è l’unica ragione per cui sono ancora qui. La guardo ogni mattina prima di uscire e mi dico: "Torna a casa per loro". Vi ringrazio davvero per tutto, per esserci stati quando stavo male, per quello che siete. Non cambiate mai. Vi auguro davvero il meglio, di realizzare tutto quello che desiderate.
+Da oggi per me non sarà più uguale, perché voi non ci sarete. Ma sappiate che io ci sarò sempre, anche se solo in un ricordo o in un saluto. Sono fiero di voi. Vorrei solo che da domani foste felici e che, a un certo punto, riusciste a dimenticarvi di me, perché so di aver sbagliato tutto e di non essere stato quello che meritavate. Di questo vi chiedo scusa. Spero che un giorno possiate perdonarmi, anche se io continuerò a pentirmi di quello che ho fatto.
+Ho fallito come amico, come persona, ho fallito in tutto.
+Non mi piaccio più. Avrei voluto essere quello che aiuta sempre, quello che regala un abbraccio o una parola di conforto, perché sappiamo tutti che la vita a volte fa schifo. Volevo esserci per voi, sempre. Ma in questo momento non sono più in grado di farlo. Mi sono perso per strada. Non riesco più ad aiutare nessuno perché non riesco nemmeno ad aiutare me stesso. HO BISOGNO di aiuto. È dal 2017 che sto male, e tra delusioni e bugie che mi sono raccontato, sento che sto affondando e non vedo più nessuna luce.
+Sento che manco poco alla fine. Non ho più la forza di rialzarmi, di uscire dall’acqua, di affrontare il mondo.
+Sono sempre stato uno che lotta, ma ora sono stanco. Non ho più energie. Ogni piccola cosa mi travolge. Sono stanco, davvero stanco.
+Mi sento solo, costantemente solo, anche quando sono in mezzo agli altri. È come se fossi chiuso in una bolla di vetro: io vedo voi, ma voi non vedete me. Mi fa male. Non voglio essere invisibile, eppure mi sento così.
+Sono solo con l’unica persona con cui non vorrei mai stare: me stesso. Mi odio. E so che questo odio mi porterà via tutto. Ho paura, e odio questa sensazione. So che la cosa migliore sarebbe allontanarmi, perché non voglio farvi del male, ma non ci riesco.
+Ho un peso nel petto che non mi lascia respirare, che non mi fa dormire né mangiare. La testa mi scoppia per tutti i brutti pensieri che ho dentro. Non so più come uscirne, non vedo altre soluzioni.
+Addio.
+Se volete parlarne mi troverete a casa, altrimenti, vi vorrò comunque bene. Sono contento di avervi conosciuto e essere stato vostro amico.
+    </div>
+
+    <div class="bottoni">
+      <!-- SOSTITUISCI IL LINK QUI SOTTO CON IL TUO LINK GITHUB -->
+      <a class="bottone-link" href="https://abapp93-bot.github.io/Brunoday/" target="_blank">
+        Ho letto
+      </a>
+
+      <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+        Rileggi
+      </button>
+    </div>
+
+    <section class="countdown-box">
+      <div class="countdown-label">
+        Tempo rimanente fino al 30 novembre 2026:
+      </div>
+
+      <div id="countdown">Caricamento countdown...</div>
+    </section>
+  </main>
+
+  <script>
+    // Fine countdown: 30 novembre 2026, ore 23:59:59
+    const dataFinale = new Date("2026-11-30T23:59:59+01:00").getTime();
+
+    function aggiornaCountdown() {
+      const adesso = new Date().getTime();
+      const distanza = dataFinale - adesso;
+
+      const countdown = document.getElementById("countdown");
+
+      if (distanza <= 0) {
+        countdown.textContent = "Il countdown è terminato.";
+        return;
+      }
+
+      const giorni = Math.floor(distanza / (1000 * 60 * 60 * 24));
+      const ore = Math.floor((distanza / (1000 * 60 * 60)) % 24);
+      const minuti = Math.floor((distanza / (1000 * 60)) % 60);
+      const secondi = Math.floor((distanza / 1000) % 60);
+
+      countdown.textContent =
+        giorni + " giorni, " +
+        ore + " ore, " +
+        minuti + " minuti, " +
+        secondi + " secondi";
+    }
+
+    aggiornaCountdown();
+    setInterval(aggiornaCountdown, 1000);
+  </script>
+
+</body>
+</html>
