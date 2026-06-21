@@ -6,6 +6,15 @@
   <title>Importante</title>
 
   <style>
+    :root {
+      --nero: #090909;
+      --nero-card: rgba(22, 22, 22, 0.94);
+      --oro: #e7bd63;
+      --oro-scuro: #a77928;
+      --testo: #f5f0e6;
+      --grigio: #b9b1a4;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -20,89 +29,188 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px;
+      padding: 28px 18px;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--testo);
+      background:
+        radial-gradient(circle at top, rgba(148, 103, 35, 0.25), transparent 42%),
+        linear-gradient(135deg, #050505, #17120a 55%, #050505);
+    }
+
+    .contenitore {
+      width: 100%;
+      max-width: 760px;
+    }
+
+    .etichetta {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 7px 13px;
+      border: 1px solid var(--oro-scuro);
+      border-radius: 99px;
+      color: var(--oro);
       font-family: Arial, sans-serif;
-      background: #111827;
-      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: bold;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
 
     .popup {
-      width: 100%;
-      max-width: 700px;
-      padding: 34px;
-      border-radius: 18px;
+      position: relative;
+      overflow: hidden;
+      padding: 42px 30px 34px;
+      border: 1px solid rgba(231, 189, 99, 0.42);
+      border-radius: 20px;
       text-align: center;
-      background: #ffffff;
-      color: #111827;
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+      background: var(--nero-card);
+      box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.55),
+        0 28px 70px rgba(0, 0, 0, 0.72);
+    }
+
+    .popup::before,
+    .popup::after {
+      content: "✦";
+      position: absolute;
+      color: rgba(231, 189, 99, 0.18);
+      font-size: 6rem;
+    }
+
+    .popup::before {
+      top: -28px;
+      left: -12px;
+    }
+
+    .popup::after {
+      right: -8px;
+      bottom: -40px;
     }
 
     h1 {
-      margin-top: 0;
-      font-size: 2.2rem;
+      position: relative;
+      margin: 0 0 10px;
+      color: var(--oro);
+      font-size: clamp(2.3rem, 8vw, 4.4rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-shadow: 0 0 22px rgba(231, 189, 99, 0.2);
+    }
+
+    .sottotitolo {
+      margin: 0 0 30px;
+      color: var(--grigio);
+      font-family: Arial, sans-serif;
+      font-size: 0.92rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     .testo {
-      margin: 22px 0;
-      line-height: 1.7;
-      font-size: 1.05rem;
+      position: relative;
+      max-width: 610px;
+      margin: auto;
+      padding: 24px 8px;
+      color: #f1eadf;
+      font-size: 1.1rem;
+      line-height: 1.8;
       white-space: pre-line;
     }
 
+    .linea {
+      width: 110px;
+      height: 1px;
+      margin: 8px auto 26px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--oro),
+        transparent
+      );
+    }
+
     .bottoni {
+      position: relative;
       display: flex;
       justify-content: center;
-      gap: 12px;
+      gap: 14px;
       flex-wrap: wrap;
-      margin: 28px 0;
+      margin: 22px 0 34px;
     }
 
-    button,
-    .bottone-link {
-      border: 0;
-      border-radius: 10px;
-      padding: 13px 20px;
-      font-size: 1rem;
+    .bottone {
+      padding: 14px 23px;
+      border-radius: 8px;
+      font-family: Arial, sans-serif;
+      font-size: 0.95rem;
       font-weight: bold;
+      letter-spacing: 0.04em;
       cursor: pointer;
       text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .bottone-link {
-      background: #111827;
-      color: white;
+    .bottone:hover {
+      transform: translateY(-3px);
     }
 
-    button {
-      background: #e5e7eb;
-      color: #111827;
+    .primario {
+      border: 1px solid var(--oro);
+      color: #17120a;
+      background: linear-gradient(135deg, #f4d389, #bd8332);
+      box-shadow: 0 7px 20px rgba(231, 189, 99, 0.18);
+    }
+
+    .secondario {
+      border: 1px solid rgba(231, 189, 99, 0.55);
+      color: var(--oro);
+      background: transparent;
     }
 
     .countdown-box {
-      border-top: 1px solid #d1d5db;
-      padding-top: 22px;
+      position: relative;
+      padding: 25px 15px 7px;
+      border-top: 1px solid rgba(231, 189, 99, 0.28);
     }
 
     .countdown-label {
-      margin-bottom: 10px;
-      font-size: 0.95rem;
-      color: #4b5563;
+      margin-bottom: 12px;
+      color: var(--grigio);
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     #countdown {
-      font-size: 1.5rem;
+      color: var(--oro);
+      font-family: Arial, sans-serif;
+      font-size: clamp(1.3rem, 5vw, 2rem);
       font-weight: bold;
+      letter-spacing: 0.04em;
+    }
+
+    .nota {
+      margin-top: 13px;
+      color: #817a70;
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
     }
   </style>
 </head>
 
 <body id="inizio">
+  <main class="contenitore">
+    <section class="popup">
+      <div class="etichetta">Messaggio riservato</div>
 
-  <main class="popup">
-    <h1>IMPORTANTE</h1>
+      <h1>Importante</h1>
+      <p class="sottotitolo">Leggi con attenzione</p>
 
-    <div class="testo">
-    Ciao a tutti. È da un sacco di tempo che ci penso e alla fine ho deciso, perché è giusto così. È la cosa più difficile che abbia mai dovuto fare, ma è una scelta che devo fare non per me, ma per voi. Non merito la vostra amicizia, non merito che perdiate nemmeno un secondo a pensare a me. Lo so, l’ho sempre saputo, ma sono stato un egoista e ho continuato a restare nelle vostre vite. Oggi però ho detto basta. Andrea, fermati, fallo per loro.
+      <div class="linea"></div>
+
+      <div class="testo">
+Ciao a tutti. È da un sacco di tempo che ci penso e alla fine ho deciso, perché è giusto così. È la cosa più difficile che abbia mai dovuto fare, ma è una scelta che devo fare non per me, ma per voi. Non merito la vostra amicizia, non merito che perdiate nemmeno un secondo a pensare a me. Lo so, l’ho sempre saputo, ma sono stato un egoista e ho continuato a restare nelle vostre vite. Oggi però ho detto basta. Andrea, fermati, fallo per loro.
 È finita qui. Sono contento di aver passato del tempo con voi, di aver condiviso momenti che per me sono tutto. Vi svelo una cosa: quella parete in cucina, con le nostre foto, è l’unica ragione per cui sono ancora qui. La guardo ogni mattina prima di uscire e mi dico: "Torna a casa per loro". Vi ringrazio davvero per tutto, per esserci stati quando stavo male, per quello che siete. Non cambiate mai. Vi auguro davvero il meglio, di realizzare tutto quello che desiderate.
 Da oggi per me non sarà più uguale, perché voi non ci sarete. Ma sappiate che io ci sarò sempre, anche se solo in un ricordo o in un saluto. Sono fiero di voi. Vorrei solo che da domani foste felici e che, a un certo punto, riusciste a dimenticarvi di me, perché so di aver sbagliato tutto e di non essere stato quello che meritavate. Di questo vi chiedo scusa. Spero che un giorno possiate perdonarmi, anche se io continuerò a pentirmi di quello che ho fatto.
 Ho fallito come amico, come persona, ho fallito in tutto.
@@ -114,40 +222,49 @@ Sono solo con l’unica persona con cui non vorrei mai stare: me stesso. Mi odio
 Ho un peso nel petto che non mi lascia respirare, che non mi fa dormire né mangiare. La testa mi scoppia per tutti i brutti pensieri che ho dentro. Non so più come uscirne, non vedo altre soluzioni.
 Addio.
 Se volete parlarne mi troverete a casa, altrimenti, vi vorrò comunque bene. Sono contento di avervi conosciuto e essere stato vostro amico.
-    </div>
-
-    <div class="bottoni">
-      <!-- SOSTITUISCI IL LINK QUI SOTTO CON IL TUO LINK GITHUB -->
-      <a class="bottone-link" href="https://abapp93-bot.github.io/Brunoday/" target="_blank">
-        Ho letto
-      </a>
-
-      <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
-        Rileggi
-      </button>
-    </div>
-
-    <section class="countdown-box">
-      <div class="countdown-label">
-        Tempo rimanente fino al 30 novembre 2026:
       </div>
 
-      <div id="countdown">Caricamento countdown...</div>
+      <div class="bottoni">
+        <!-- INCOLLA QUI IL LINK CHE MI DARAI -->
+        <a
+          class="bottone primario"
+          href="https://abapp93-bot.github.io/Brunoday/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ho letto
+        </a>
+
+        <button
+          class="bottone secondario"
+          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        >
+          Rileggi
+        </button>
+      </div>
+
+      <section class="countdown-box">
+        <div class="countdown-label">
+          Il messaggio termina tra
+        </div>
+
+        <div id="countdown">Caricamento...</div>
+
+      
+      </section>
     </section>
   </main>
 
   <script>
-    // Fine countdown: 30 novembre 2026, ore 23:59:59
     const dataFinale = new Date("2026-11-30T23:59:59+01:00").getTime();
 
     function aggiornaCountdown() {
-      const adesso = new Date().getTime();
-      const distanza = dataFinale - adesso;
-
+      const ora = new Date().getTime();
+      const distanza = dataFinale - ora;
       const countdown = document.getElementById("countdown");
 
       if (distanza <= 0) {
-        countdown.textContent = "Il countdown è terminato.";
+        countdown.textContent = "Il tempo è terminato.";
         return;
       }
 
@@ -157,15 +274,11 @@ Se volete parlarne mi troverete a casa, altrimenti, vi vorrò comunque bene. Son
       const secondi = Math.floor((distanza / 1000) % 60);
 
       countdown.textContent =
-        giorni + " giorni, " +
-        ore + " ore, " +
-        minuti + " minuti, " +
-        secondi + " secondi";
+        `${giorni}g  ${ore}h  ${minuti}m  ${secondi}s`;
     }
 
     aggiornaCountdown();
     setInterval(aggiornaCountdown, 1000);
   </script>
-
 </body>
 </html>
